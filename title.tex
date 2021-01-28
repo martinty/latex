@@ -6,19 +6,17 @@
 % =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 % Fill in the name of the topic you were assigned 
-\def\TOPIC{Topic Name}
+%\def\TOPIC{Topic Name}
 
 % Fill in a user-selected name for the paper 
-\def\TITLE{Paper Title}
+\def\TITLE{Paper Title} %TODO
 
 % Fill in groupname as displayed in blackboard 
-\def\GROUP{Group ???}
+% \def\GROUP{Group ???}
 
 % Fill in "Firstname Lastname NTNU-Username" for all group members
 \def\AUTHORS{
-    FirstName1 LastName1 (username1) \\
-    FirstName2 LastName2 (username2) \\
-    FirstName3 LastName3 (username3) \\
+    Martin Tysseland \\
 }
 
 % =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -26,47 +24,47 @@
 
 \begin{titlepage}
 
-\vbox{ }
+    \vbox{ }
 
-\vbox{ }
+    \vbox{ }
 
-\begin{center}
-% Upper part of the page
-\includegraphics[width=0.40\textwidth]{Images/NTNU_logo.png}\\[1cm]
-\textsc{\LARGE Department of Computer Science}\\[1.0cm]
-\textsc{\Large TDT4173 - Assignment 1}\\[0.5cm]
-
-
-\def\checktitle{Paper Title}
-\ifx\TITLE\checktitle
-    \todo[inline]{
-        Remember to fill in topic name, paper title, group name, and members in "title.tex"
-    }
-\fi
-
-\vbox{ }
-% Title
-\HRule \\[0.4cm]
-{ \large \TOPIC } \\[0.3cm]
-{ \huge \bfseries \TITLE}\\[0.4cm]
-\HRule \\[1.5cm]
-% Author and supervisor
-% Uncomment indented if you want to add a special collaborator:
-    %\begin{minipage}{0.4\textwidth}
-    %\begin{flushleft} 
-\large
-
-\emph{Group:}\\
-\GROUP
-
-\emph{Authors:}\\
-\AUTHORS
+    \begin{center}
+        % Upper part of the page
+        \includegraphics[width=0.40\textwidth]{Images/NTNU_logo.png}\\[1cm]
+        \textsc{\LARGE Department of Engineering Cybernetics}\\[1.0cm]
+        %\textsc{\Large TDT4173 - Assignment 1}\\[0.5cm]
 
 
-\vfill
-% Bottom of the page
-{\large \today}
-\end{center}
+        %\def\checktitle{Paper Title}
+        %\ifx\TITLE\checktitle
+        %    \todo[inline]{
+        %        Remember to fill in topic name, paper title, group name, and members in "title.tex"
+        %    }
+        %\fi
+
+        \vbox{ }
+        % Title
+        \HRule \\[0.4cm]
+        %{ \large \TOPIC } \\[0.3cm]
+        { \huge \bfseries \TITLE}\\[0.4cm]
+        \HRule \\[1.5cm]
+        % Author and supervisor
+        % Uncomment indented if you want to add a special collaborator:
+        %\begin{minipage}{0.4\textwidth}
+        %\begin{flushleft} 
+        \large
+
+        %\emph{Group:}\\
+        %\GROUP
+
+        \emph{Authors:}\\
+        \AUTHORS
+
+
+        \vfill
+        % Bottom of the page
+        {\large \today}
+    \end{center}
 \end{titlepage}
 
 

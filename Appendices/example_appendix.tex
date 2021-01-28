@@ -21,7 +21,7 @@ The advantage of labeling and referencing is that it allows the correct element 
 After an element is labeled, it can be referenced in several ways:
 
 \begin{itemize}
-    \item Reference element code: \verb|\ref{app:within-the-document}| $\rightarrow$ \ref{app:within-the-document} 
+    \item Reference element code: \verb|\ref{app:within-the-document}| $\rightarrow$ \ref{app:within-the-document}
     \item Reference element page \verb|\pageref{app:within-the-document}| $\rightarrow$ \pageref{app:within-the-document}
     \item Autoformat reference\footnote{The exact format of autoref is configurable. See "setup.sty".}: \verb|\autoref{app:within-the-document}| $\rightarrow$ \autoref{app:within-the-document}
 \end{itemize}
@@ -43,7 +43,7 @@ Once the bibliography is made available, it can be cited:
     \item \verb|\citep{ghia_et_al, sagan_1993}| $\rightarrow$ \citep{ghia_et_al, sagan_1993}
 \end{itemize}
 
-Cited bibliography will automatically show up in the bibliography section of this document. 
+Cited bibliography will automatically show up in the bibliography section of this document.
 The exact appearance depends on the configured citation style, which at the time of writing is set to \verb|plainnat| (see \url{https://www.overleaf.com/learn/latex/Natbib_bibliography_styles} for alternatives).
 
 % =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -81,7 +81,7 @@ It is also possible to compose a single figure from several graphical elements.
 Figure \ref{fig:example-sub-figure} gives an example of how this can be done with the use of subfigures.
 
 % Declare outer figure 
-\begin{figure}[H] 
+\begin{figure}[H]
     \centering
     % Place each image in it's own sub-figure 
     \begin{subfigure}[t]{0.450\textwidth}
@@ -104,7 +104,7 @@ Figure \ref{fig:example-sub-figure} gives an example of how this can be done wit
 
 There are also several packages for generating figures and diagrams.
 Figure \ref{fig:example-flow-chart} was generated with the \verb|tikz| package, which allows drawing arbitrary vector graphics with LaTeX commands.
-While elegant, learning it might take some time, so an easier solution is to use conventional drawing tools with graphical user interfaces (e.g. \url{draw.io}) and display the resulting figures as conventional images. 
+While elegant, learning it might take some time, so an easier solution is to use conventional drawing tools with graphical user interfaces (e.g. \url{draw.io}) and display the resulting figures as conventional images.
 
 \begin{figure}[H]
     \centering
@@ -117,7 +117,7 @@ While elegant, learning it might take some time, so an easier solution is to use
         \node [decision, below of=new_project] (decide) {Good enough?};
         \node [block, right of=new_project, node distance=3cm] (no) {Improve the template};
         \node [block, below of=decide, node distance=3cm] (yes) {Get to work!};
-    
+
         % Draw edges
         \path [line] (init) -- (new_project);
         \path [line] (new_project) -- (decide);
@@ -147,18 +147,18 @@ Getting the formatting right can be a bit cumbersome, but there exists serveral 
 
 % Initialize table. "!h" prevents the it from floating around
 % See: https://www.overleaf.com/learn/latex/Errors/%60!h'%20float%20specifier%20changed%20to%20%60!ht'
-\begin{table}[H]  
+\begin{table}[H]
     % Place the table in the center of the page 
     \centering
     % Define 3 columns: 1 (l)eft-aligned, then a horizontal line, then two (c)enter-aligned
-    \begin{tabular}{l|cc} 
+    \begin{tabular}{l|cc}
         % Put a thick line on top the table and add header row
         \toprule
-        Statistic &  Agent57 &  R2D2 (bandit) \\
+        Statistic & Agent57 & R2D2 (bandit) \\
         % Separate header by a slimmer line and add body
         \midrule
-        Mean   &  4766.25 &        5461.66 \\
-        Median &  1933.49 &        2357.92 \\
+        Mean      & 4766.25 & 5461.66       \\
+        Median    & 1933.49 & 2357.92       \\
         % Put a thick line at the bottom 
         \bottomrule
     \end{tabular}
@@ -200,18 +200,18 @@ The example in Table \ref{tab:example-table-csv} is generated with the \verb|csv
     \centering
     % Read csv  
     \csvreader[
-      % Set table layout and define header columns
-      tabular=l|cc,
-      table head=\toprule Statistics & Agent57 & R2D2 (bandit) \\\midrule,
-      % Insert a horizontal line after the table 
-      table foot=\bottomrule,
-      % Make the data of "ColumnName" available with "\columnname"
-      head to column names,
-      ]
-      % Set path to source data
-      {Tables/example_table.csv}{}
-      % Define input for each row. "\csvcolii" -> "ii" -> column number 2
-      {\statistics & \csvcolii & \csvcoliii}
+        % Set table layout and define header columns
+        tabular=l|cc,
+        table head=\toprule Statistics & Agent57 & R2D2 (bandit) \\\midrule,
+        % Insert a horizontal line after the table 
+        table foot=\bottomrule,
+        % Make the data of "ColumnName" available with "\columnname"
+        head to column names,
+    ]
+    % Set path to source data
+    {Tables/example_table.csv}{}
+    % Define input for each row. "\csvcolii" -> "ii" -> column number 2
+    {\statistics & \csvcolii & \csvcoliii}
     % Set caption and label as normal
     \caption{Same data as Table \ref{tab:example-table}, except generated from a csv file.}
     \label{tab:example-table-csv}
@@ -227,7 +227,7 @@ The example in Table \ref{tab:example-table-csv} is generated with the \verb|csv
 \subsection{Equations}
 \label{app:equations}
 
-LaTex is great for writing equations and mathematical symbols. 
+LaTex is great for writing equations and mathematical symbols.
 To write an equation or expression, you must enter math mode.
 There are two forms of math modes; \textit{inline} and \textit{display}.
 
@@ -245,21 +245,21 @@ Additionally, it allows the equation to be labeled and referenced throughout the
     \begin{split}
         % The "&" before each equals sign makes sure that they will be aligned 
         % Remember to put "\\" at the end to make a new line
-        v_\pi(s) & = \mathbb{E}_{s' \sim \mathcal{T}, a \sim \pi} \big[ G_t | S_t = s \big] \\ 
-                 & = \sum_{a,s'}
-                    {
-                        \pi(a|s) \mathcal{T}(s'|s,a) 
-                        \big[ 
-                            \mathcal{R}(s, a, s') + \gamma v_\pi(s') 
-                        \big]
-                    } 
+        v_\pi(s) & = \mathbb{E}_{s' \sim \mathcal{T}, a \sim \pi} \big[ G_t | S_t = s \big] \\
+        & = \sum_{a,s'}
+        {
+            \pi(a|s) \mathcal{T}(s'|s,a)
+            \big[
+                \mathcal{R}(s, a, s') + \gamma v_\pi(s')
+                \big]
+        }
     \end{split}
     % Add caption so that the equation can be referenced throughout the document
     \label{eq:bellman-equations}
 \end{equation}
 
 Most fancy symbols and Greek letters are built into latex and can be written in math mode with a \verb|\| prefix.
-For instance, \verb|\pi| becomes $\pi$. 
+For instance, \verb|\pi| becomes $\pi$.
 See \url{https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols} for more information.
 
 
@@ -277,7 +277,7 @@ Here are a few examples of how this can be accomplished.
 
 \subsubsection{Pseudocode}
 
-It is common in scientific writing to not write out algorithms in any directly compilable or executable language, but instead use pseudocode. 
+It is common in scientific writing to not write out algorithms in any directly compilable or executable language, but instead use pseudocode.
 An advantage of this notation is that you are not locked into any language-specific syntax and may choose to write operations at any desired level of abstraction and even include standard equations.
 The example in Algorithm \ref{alg:example-algorithm} illustrates how this can be done with the \verb|algorithm| and \verb|algpseudocode| packages.
 
@@ -289,27 +289,27 @@ The example in Algorithm \ref{alg:example-algorithm} illustrates how this can be
     \begin{algorithmic}
         % Declare function. \Comments will automatically be aligned to the right in the snippet
         \Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
-            \State $r\gets a\bmod b$
-            % Control structures like \While \For \If will automatically indent subsequent statements until an \End[While|For\If] is declared
-            \While{$r\not=0$}\Comment{We have the answer if r is 0}
-                \State $a\gets b$
-                \State $b\gets r$
-                \State $r\gets a\bmod b$
-            \EndWhile\label{euclidendwhile}
-            \State \textbf{return} $b$\Comment{The gcd is b}
+        \State $r\gets a\bmod b$
+        % Control structures like \While \For \If will automatically indent subsequent statements until an \End[While|For\If] is declared
+        \While{$r\not=0$}\Comment{We have the answer if r is 0}
+        \State $a\gets b$
+        \State $b\gets r$
+        \State $r\gets a\bmod b$
+        \EndWhile\label{euclidendwhile}
+        \State \textbf{return} $b$\Comment{The gcd is b}
         \EndProcedure
     \end{algorithmic}
-\end{algorithm} 
+\end{algorithm}
 
 
 \subsubsection{Conventional Code}
 
-In some situations, it might be more appropriate to disclose runnable code in an existing language. 
+In some situations, it might be more appropriate to disclose runnable code in an existing language.
 For instance, if a key part of your project involves a (relatively compact) implementation of an algorithm, you can include it in an appendix for enhanced portability and reproducibility.
-The example below uses the \verb|minted| package to render a snippet of C++ code with conventional syntax highlighting. 
+The example below uses the \verb|minted| package to render a snippet of C++ code with conventional syntax highlighting.
 
 
-\begin{minted}[breaklines]{c++}
+\begin{minted}[breaklines, bgcolor=bg]{c++}
 int main {
     // This is a comment
     std::cout << "Hello World from C++!" << std::endl;
@@ -323,5 +323,5 @@ Similarly to the table example in Section \ref{app:example-table-external}, the 
 The snippet below is loaded from "Code/HelloWorld.m" with the \verb|minted| package.
 
 \usemintedstyle{tango}
-\inputminted[breaklines]{Matlab}{./Code/HelloWorld.m}
+\inputminted[breaklines, bgcolor=bg]{Matlab}{./Code/HelloWorld.m}
 
