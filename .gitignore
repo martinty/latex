@@ -7,7 +7,7 @@
 *.fls
 *.lot
 *.out
-*.pdf
 *.synctex.gz
 *.toc
 _minted-*
+main.pdf
